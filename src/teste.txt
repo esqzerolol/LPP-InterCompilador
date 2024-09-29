@@ -1,11 +1,10 @@
 class Base
- vars a, b, c
- method calc()
+ vars id
+ method showid()
  vars x
  begin
- x = self.a
- io.print(x)
- x = 0
- return x
+    self.id = 10
+    x = self.id
+    return x
  end-method
 end-class

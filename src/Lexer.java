@@ -23,15 +23,37 @@ public class Lexer {
         while (matcher.find()) {
             String tokenValue = matcher.group();
             String tokenType;
-
+            System.out.println(tokenValue);
             // Identificar o tipo de token
-                if (tokenValue.matches("\\b(class|method|begin|self|vars|end|if|return|eq|ne|vars|return|self)\\b")) {
-                tokenType = "PALAVRA_CHAVE";
-            }   else {
-            
-                tokenType = "NÃO PALAVRA-CHAVE";
+            switch (tokenValue){
+                case "class":
+                    tokenType = "class-def";
+                    break;
+                case "end-class":
+                    tokenType = "class-def";
+                    break;
+                case "vars":
+                    tokenType = "vars-def";
+                    break;
+                case "method": 
+                    tokenType = "method-def";
+                    break;
+                case "end-method":
+                    tokenType = "method-body";
+                    break;
+                case "begin":
+                    tokenType = "main-body";
+                    break;
+                case "self":
+                    tokenType = "arg-special";
+                    break;
+                case "return":
+                    tokenType = "body-stmt";
+                    break;
+                default:
+                    tokenType = "nome";
             }
-
+            
             // Criar um novo token e adicionar à lista
             Token token = new Token(tokenType, tokenValue);
             tokens.add(token);
