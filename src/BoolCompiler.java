@@ -1,4 +1,6 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -20,7 +22,7 @@ public class BoolCompiler {
     public static void main(String[] args) {
         BoolCompiler compiler = new BoolCompiler();
 
-        String filePath = "/home/gabisml/trabalhoLPP/boolcompiler/src/teste.txt";  
+        String filePath = "teste.txt";  
 
         // Ler o conteúdo do arquivo
         String code = compiler.readFile(filePath);
