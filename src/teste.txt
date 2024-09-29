@@ -1,0 +1,11 @@
+class Base
+ vars a, b, c
+ method calc()
+ vars x
+ begin
+ x = self.a
+ io.print(x)
+ x = 0
+ return x
+ end-method
+end-class
